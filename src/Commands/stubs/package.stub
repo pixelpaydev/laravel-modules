@@ -7,12 +7,15 @@
 		"watch-poll": "npm run watch -- --watch-poll",
 		"hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
 		"prod": "npm run production",
-		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"icons": "npm run generate-icons",
+		"generate-icons": "node_modules/icon-font-generator/bin/icon-font-generator ./Resources/icons/*.svg -o ./Resources/public/fonts --csspath ./Resources/public/css/icons.css --height 1200 --types 'ttf, woff2, woff'"
 	},
 	"devDependencies": {
 		"cross-env": "^7.0",
 		"laravel-mix": "^5.0.1",
 		"node-sass": "^4.13.1",
+		"icon-font-generator": "^2.1.10",
 		"vue-template-compiler": "^2.6.11"
 	}
 }

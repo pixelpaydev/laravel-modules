@@ -1,15 +1,15 @@
 const mix = require('laravel-mix');
 
 mix.setPublicPath('Resources/public');
-mix.js(__dirname + '/Resources/assets/js/app.js', 'js/$LOWER_NAME$.js')
-	.sass(__dirname + '/Resources/assets/sass/app.scss', 'css/$LOWER_NAME$.css');
+mix.js(__dirname + '/Resources/assets/js/$LOWER_NAME$.js', 'js/$LOWER_NAME$.js')
+	.sass(__dirname + '/Resources/assets/sass/$LOWER_NAME$.scss', 'css/$LOWER_NAME$.css');
 
 if (mix.inProduction()) {
 	mix.version();
 } else {
 	mix.browserSync({
 		open: false,
-		files: ['../../public/vendor/$LOWER_NAME$/**/*']
+		files: ['../../public/modules/$LOWER_NAME$/**/*']
 	});
 
 	mix.copy('Resources/public', '../../public/modules/$LOWER_NAME$');

@@ -5,6 +5,7 @@ namespace $NAMESPACE$;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Console\Scheduling\Schedule;
 
 class $CLASS$ extends ServiceProvider
 {
@@ -110,7 +111,7 @@ class $CLASS$ extends ServiceProvider
 	 */
 	public function registerSchedule() {
 		$this->app->booted(function () {
-			$schedule = $this->app->make(Schedule::class);
+			// $schedule = $this->app->make(Schedule::class);
 			// $schedule->command('command:name')->daily();
 		});
 	}

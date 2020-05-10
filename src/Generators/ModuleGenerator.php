@@ -6,10 +6,11 @@ use Illuminate\Config\Repository as Config;
 use Illuminate\Console\Command as Console;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
-use Pixel\Modules\Contracts\ActivatorInterface;
-use Pixel\Modules\FileRepository;
-use Pixel\Modules\Support\Config\GenerateConfigReader;
+
 use Pixel\Modules\Support\Stub;
+use Pixel\Modules\FileRepository;
+use Pixel\Modules\Contracts\ActivatorInterface;
+use Pixel\Modules\Support\Config\GenerateConfigReader;
 
 class ModuleGenerator extends Generator
 {
@@ -355,6 +356,17 @@ class ModuleGenerator extends Generator
 	{
 		foreach ($this->getFiles() as $stub => $file) {
 			$path = $this->module->getModulePath($this->getName()) . $file;
+
+			$studlyName = $this->getStudlyNameReplacement();
+			$lowerName = $this->getLowerNameReplacement();
+
+			if (Str::contains($path, '{LOWER_NAME}')) {
+				$path = Str::replaceFirst('{LOWER_NAME}', $lowerName, $path);
+			}
+
+			if (Str::contains($path, '{STUDLY_NAME}')) {
+				$path = Str::replaceFirst('{STUDLY_NAME}', $studlyName, $path);
+			}
 
 			if (!$this->filesystem->isDirectory($dir = dirname($path))) {
 				$this->filesystem->makeDirectory($dir, 0775, true);
