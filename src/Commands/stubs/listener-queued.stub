@@ -8,26 +8,26 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class $CLASS$ implements ShouldQueue
 {
-    use InteractsWithQueue;
+	use InteractsWithQueue;
 
-    /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+	/**
+	 * Create the event listener.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		//
+	}
 
-    /**
-     * Handle the event.
-     *
-     * @param  $SHORTEVENTNAME$  $event
-     * @return void
-     */
-    public function handle($SHORTEVENTNAME$ $event)
-    {
-        //
-    }
+	/**
+	 * Handle the event.
+	 *
+	 * @param  $SHORTEVENTNAME$  $event
+	 * @return void
+	 */
+	public function handle($SHORTEVENTNAME$ $event)
+	{
+		//
+	}
 }

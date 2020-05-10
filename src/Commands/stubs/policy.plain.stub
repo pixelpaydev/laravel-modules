@@ -6,15 +6,15 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 
 class $CLASS$
 {
-    use HandlesAuthorization;
+	use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+	/**
+	 * Create a new policy instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		//
+	}
 }

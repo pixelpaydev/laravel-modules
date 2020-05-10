@@ -24,7 +24,7 @@ class FactoryMakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $name = 'module:make-factory';
+    protected $name = 'md-make:factory';
 
     /**
      * The console command description.

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class $CLASS$ extends Model
 {
-    protected $fillable = $FILLABLE$;
+	protected $fillable = $FILLABLE$;
 }

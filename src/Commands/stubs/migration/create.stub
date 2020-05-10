@@ -6,27 +6,27 @@ use Illuminate\Database\Migrations\Migration;
 
 class $CLASS$ extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('$TABLE$', function (Blueprint $table) {
-            $table->bigIncrements('id');
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('$TABLE$', function (Blueprint $table) {
+			$table->bigIncrements('id');
 $FIELDS$
-            $table->timestamps();
-        });
-    }
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('$TABLE$');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('$TABLE$');
+	}
 }

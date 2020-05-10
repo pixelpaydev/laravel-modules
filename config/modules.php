@@ -39,6 +39,15 @@ return [
 			'assets/sass/app' => 'Resources/assets/sass/app.scss',
 			'webpack' => 'webpack.mix.js',
 			'package' => 'package.json',
+
+			'contrib/codecov' => '.codecov',
+			'contrib/contrib' => 'CONTRIBUTING.md',
+			'contrib/editor' => '.editorconfig',
+			'contrib/gitattr' => '.gitattributes',
+			'contrib/gitignore' => '.gitignore',
+			'contrib/license' => 'LICENSE.md',
+			'contrib/readme' => 'README.md',
+			'contrib/travis' => '.travis.yml',
 		],
 		'replacements' => [
 			'routes/web' => ['LOWER_NAME', 'STUDLY_NAME'],
