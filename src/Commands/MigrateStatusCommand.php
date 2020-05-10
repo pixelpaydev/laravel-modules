@@ -38,17 +38,17 @@ class MigrateStatusCommand extends Command
     {
         $this->module = $this->laravel['modules'];
 
-        $name = $this->argument('module');
+        $module_name = $this->argument('module');
 
-        if ($name) {
-            $module = $this->module->findOrFail($name);
+        if ($module_name) {
+            $module_model = $this->module->findOrFail($module_name);
 
-            return $this->migrateStatus($module);
+            return $this->migrateStatus($module_model);
         }
 
-        foreach ($this->module->getOrdered($this->option('direction')) as $module) {
-            $this->line('Running for module: <info>' . $module->getName() . '</info>');
-            $this->migrateStatus($module);
+        foreach ($this->module->getOrdered($this->option('direction')) as $module_model) {
+            $this->line('Running for module: <info>' . $module_model->getName() . '</info>');
+            $this->migrateStatus($module_model);
         }
     }
 

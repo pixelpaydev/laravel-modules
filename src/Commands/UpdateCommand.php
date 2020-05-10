@@ -29,10 +29,10 @@ class UpdateCommand extends Command
      */
     public function handle()
     {
-        $name = $this->argument('module');
+        $module_name = $this->argument('module');
 
-        if ($name) {
-            $this->updateModule($name);
+        if ($module_name) {
+            $this->updateModule($module_name);
 
             return;
         }

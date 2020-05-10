@@ -38,10 +38,10 @@ class MigrateResetCommand extends Command
     {
         $this->module = $this->laravel['modules'];
 
-        $name = $this->argument('module');
+        $module_name = $this->argument('module');
 
-        if (!empty($name)) {
-            $this->reset($name);
+        if (!empty($module_name)) {
+            $this->reset($module_name);
 
             return;
         }

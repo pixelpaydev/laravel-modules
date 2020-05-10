@@ -38,10 +38,10 @@ class MigrateRollbackCommand extends Command
     {
         $this->module = $this->laravel['modules'];
 
-        $name = $this->argument('module');
+        $module_name = $this->argument('module');
 
-        if (!empty($name)) {
-            $this->rollback($name);
+        if (!empty($module_name)) {
+            $this->rollback($module_name);
 
             return;
         }

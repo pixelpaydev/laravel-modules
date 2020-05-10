@@ -28,8 +28,8 @@ class PublishMigrationCommand extends Command
      */
     public function handle()
     {
-        if ($name = $this->argument('module')) {
-            $module = $this->laravel['modules']->findOrFail($name);
+        if ($module_name = $this->argument('module')) {
+            $module = $this->laravel['modules']->findOrFail($module_name);
 
             $this->publish($module);
 

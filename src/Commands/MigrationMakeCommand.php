@@ -156,7 +156,7 @@ class MigrationMakeCommand extends GeneratorCommand
         parent::handle();
 
         if (app()->environment() === 'testing') {
-            return;
+            return null;
         }
     }
 }

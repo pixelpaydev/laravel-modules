@@ -28,8 +28,8 @@ class PublishCommand extends Command
      */
     public function handle()
     {
-        if ($name = $this->argument('module')) {
-            $this->publish($name);
+        if ($module_name = $this->argument('module')) {
+            $this->publish($module_name);
 
             return;
         }

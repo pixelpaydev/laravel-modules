@@ -38,18 +38,18 @@ class MigrateCommand extends Command
     {
         $this->module = $this->laravel['modules'];
 
-        $name = $this->argument('module');
+        $module_name = $this->argument('module');
 
-        if ($name) {
-            $module = $this->module->findOrFail($name);
+        if ($module_name) {
+            $module_model = $this->module->findOrFail($module_name);
 
-            return $this->migrate($module);
+            return $this->migrate($module_model);
         }
 
-        foreach ($this->module->getOrdered($this->option('direction')) as $module) {
-            $this->line('Running for module: <info>' . $module->getName() . '</info>');
+        foreach ($this->module->getOrdered($this->option('direction')) as $module_model) {
+            $this->line('Running for module: <info>' . $module_model->getName() . '</info>');
 
-            $this->migrate($module);
+            $this->migrate($module_model);
         }
     }
 
