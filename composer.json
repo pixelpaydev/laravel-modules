@@ -49,7 +49,8 @@
 	},
 	"scripts": {
 		"test": "vendor/bin/phpunit",
-		"test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+		"test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+		"post-autoload-dump": "@php artisan module:setup"
 	},
 	"extra": {
 		"laravel": {
