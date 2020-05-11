@@ -73,7 +73,7 @@ class Stub
 	{
 		$stub_path = static::getBasePath() . $this->path;
 
-		return file_exists($stub_path) ? $stub_path : __DIR__ . '/../Commands/stubs' . $this->path;
+		return file_exists($stub_path) ? $stub_path : __DIR__ . '/../Stubs' . $this->path;
 	}
 
 	/**

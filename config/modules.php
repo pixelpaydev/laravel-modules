@@ -27,7 +27,7 @@ return [
 
 	'stubs' => [
 		'enabled' => false,
-		'path' => base_path() . '/vendor/pixel/modules/src/Commands/stubs',
+		'path' => base_path() . '/vendor/pixel/modules/src/Stubs',
 		'files' => [
 			'routes/web' => 'Routes/web.php',
 			'routes/api' => 'Routes/api.php',
@@ -39,8 +39,8 @@ return [
 			'assets/sass/app' => 'Resources/assets/sass/{LOWER_NAME}.scss',
 			'webpack' => 'webpack.mix.js',
 			'package' => 'package.json',
-			'lang' => 'Resources/lang/en/lang.php',
-			'lang' => 'Resources/lang/es/lang.php',
+			'lang-en' => 'Resources/lang/en/lang.php',
+			'lang-es' => 'Resources/lang/es/lang.php',
 
 			'contrib/codecov' => '.codecov.yml',
 			'contrib/contrib' => 'CONTRIBUTING.md',

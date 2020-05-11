@@ -1,0 +1,57 @@
+const fs = require('fs');
+const mix = require('laravel-mix');
+const process = require('child_process');
+
+mix.setPublicPath('Resources/public');
+mix.js(__dirname + '/Resources/assets/js/$LOWER_NAME$.js', 'js/$LOWER_NAME$.js')
+	.sass(__dirname + '/Resources/assets/sass/$LOWER_NAME$.scss', 'css/$LOWER_NAME$.css');
+
+if (mix.inProduction()) {
+	mix.version();
+} else {
+	mix.browserSync({
+		open: false,
+		port: 19001,
+		files: [
+			'../../public/modules/$LOWER_NAME$/**/*',
+			'./Resources/views/**/*'
+		]
+	});
+
+	mix.copy('Resources/public', '../../public/modules/$LOWER_NAME$');
+}
+
+mix.options({
+	processCssUrls: false,
+	uglify: {uglifyOptions: {
+		compress: {drop_console: false}
+	}}
+});
+
+const doneChangesInterval = 1000;
+let filesTimer;
+
+fs.watch('./Resources/icons', (eventType, filename) => {
+	console.warn(`File ${eventType} ${filename}`);
+	clearTimeout(filesTimer);
+	filesTimer = setTimeout(doneWatchingChanges, doneChangesInterval);
+})
+
+const doneWatchingChanges = () => {
+	console.log('Loading icons for generate font ...');
+
+	const bin_path = 'node_modules/icon-font-generator/bin/icon-font-generator';
+	const icons_path = './Resources/icons/*.svg';
+	const font_path = './Resources/public/fonts';
+	const css_path = './Resources/public/css/icons.css';
+	const exec_params = '--height 1200 --types ttf,woff2,woff --json false --html false';
+	const exec_command = `${bin_path} ${icons_path} -o ${font_path} --csspath ${css_path} ${exec_params}`;
+
+	if (!fs.existsSync(font_path)) {
+		fs.mkdirSync(font_path);
+	}
+
+	process.exec(exec_command, (err, stdout, stderr) => {
+		console.log(stdout);
+	});
+}

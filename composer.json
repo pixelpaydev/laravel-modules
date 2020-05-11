@@ -50,7 +50,7 @@
 	"scripts": {
 		"test": "vendor/bin/phpunit",
 		"test-coverage": "vendor/bin/phpunit --coverage-html coverage",
-		"post-autoload-dump": "@php artisan module:setup"
+		"post-package-install": "@php artisan module:setup"
 	},
 	"extra": {
 		"laravel": {
@@ -62,7 +62,7 @@
 			}
 		},
 		"branch-alias": {
-			"dev-master": "7.0-dev"
+			"dev-master": "7.0.1"
 		}
 	}
 }

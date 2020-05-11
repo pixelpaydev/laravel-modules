@@ -32,7 +32,7 @@ class LaravelModulesServiceProvider extends ModulesServiceProvider
 	 */
 	public function setupStubPath()
 	{
-		Stub::setBasePath(__DIR__ . '/Commands/stubs');
+		Stub::setBasePath(__DIR__ . '/Stubs');
 
 		$this->app->booted(function ($app) {
 			/** @var RepositoryInterface $moduleRepository */
