@@ -62,7 +62,7 @@
 			}
 		},
 		"branch-alias": {
-			"dev-master": "7.0.1"
+			"dev-master": "7.0-dev"
 		}
 	}
 }
